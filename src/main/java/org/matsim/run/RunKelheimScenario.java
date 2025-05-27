@@ -16,6 +16,7 @@ import org.matsim.api.core.v01.events.PersonScoreEvent;
 import org.matsim.api.core.v01.events.handler.PersonDepartureEventHandler;
 import org.matsim.api.core.v01.network.Link;
 import org.matsim.api.core.v01.network.Network;
+import org.matsim.api.core.v01.network.Node;
 import org.matsim.api.core.v01.population.Person;
 import org.matsim.api.core.v01.population.Population;
 import org.matsim.application.MATSimApplication;
@@ -52,6 +53,7 @@ import org.matsim.core.config.groups.RoutingConfigGroup;
 import org.matsim.core.config.groups.VspExperimentalConfigGroup;
 import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controler;
+import org.matsim.core.network.NetworkUtils;
 import org.matsim.core.router.AnalysisMainModeIdentifier;
 import org.matsim.core.scoring.functions.ScoringParametersForPerson;
 import org.matsim.drtFare.KelheimDrtFareModule;
@@ -382,4 +384,41 @@ public class RunKelheimScenario extends MATSimApplication {
 
 		}
 	}
+	/*
+	//加高速
+	private void addHighwayToTheNetwork(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("29999218"));
+		Node toNode = network.getNodes().get(Id.createNodeId("370357925"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 2000;
+		double numberOfLanesOfMyNewHighway = 1.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighwayReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		network.addLink(myNewLinkReverse);
+	}
+	*/
 }

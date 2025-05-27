@@ -6,10 +6,10 @@
     </module>
 
     <module name="controller">
-        <param name="lastIteration" value="2"/>
+        <param name="lastIteration" value="49"/>
         <param name="overwriteFiles" value="failIfDirectoryExists"/>
-        <param name="runId" value="output_file_1"/>
-        <param name="outputDirectory" value="./output/output_file_1"/>
+        <param name="runId" value="original"/>
+        <param name="outputDirectory" value="./output/original"/>
         <param name="writeEventsInterval" value="100"/>
         <param name="writePlansInterval" value="100"/>
         <param name="enableLinkToLinkRouting" value="false"/>
