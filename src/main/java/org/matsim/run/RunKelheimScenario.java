@@ -268,6 +268,21 @@ public class RunKelheimScenario extends MATSimApplication {
 				link.setAllowedModes(newModes);
 			}
 		}
+		//加高速
+		addHighwayToTheNetwork1(scenario.getNetwork());
+		addHighwayToTheNetwork2(scenario.getNetwork());
+		addHighwayToTheNetwork3(scenario.getNetwork());
+		addHighwayToTheNetwork4(scenario.getNetwork());
+		addHighwayToTheNetwork5(scenario.getNetwork());
+		addHighwayToTheNetwork6(scenario.getNetwork());
+		addHighwayToTheNetwork7(scenario.getNetwork());
+		addHighwayToTheNetwork8(scenario.getNetwork());
+		addHighwayToTheNetwork9(scenario.getNetwork());
+		addHighwayToTheNetwork10(scenario.getNetwork());
+		addHighwayToTheNetwork11(scenario.getNetwork());
+		addHighwayToTheNetwork12(scenario.getNetwork());
+
+
 
 		if (drt) {
 			scenario.getPopulation()
@@ -384,17 +399,16 @@ public class RunKelheimScenario extends MATSimApplication {
 
 		}
 	}
-	/*
-	//加高速
-	private void addHighwayToTheNetwork(Network network) {
-		Node fromNode = network.getNodes().get(Id.createNodeId("29999218"));
-		Node toNode = network.getNodes().get(Id.createNodeId("370357925"));
+	//加高速1
+	private void addHighwayToTheNetwork1(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("297315202"));
+		Node toNode = network.getNodes().get(Id.createNodeId("273092049"));
 
-		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway");
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway1");
 		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
 		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
-		double capacity = 2000;
-		double numberOfLanesOfMyNewHighway = 1.0;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
 
 		Link myNewLink = NetworkUtils.createLink(
 			linkIdMyNewHighway,
@@ -406,10 +420,11 @@ public class RunKelheimScenario extends MATSimApplication {
 			capacity,
 			numberOfLanesOfMyNewHighway
 		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
 		network.addLink(myNewLink);
 
 		Link myNewLinkReverse = NetworkUtils.createLink(
-			Id.createLinkId("myNewHighwayReverseDirection"),
+			Id.createLinkId("myNewHighway1ReverseDirection"),
 			toNode,
 			fromNode,
 			network,
@@ -418,7 +433,423 @@ public class RunKelheimScenario extends MATSimApplication {
 			capacity,
 			numberOfLanesOfMyNewHighway
 		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
 		network.addLink(myNewLinkReverse);
 	}
-	*/
+
+	//加高速2
+	private void addHighwayToTheNetwork2(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("273092049"));
+		Node toNode = network.getNodes().get(Id.createNodeId("1399775825"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway2");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway2ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速3
+	private void addHighwayToTheNetwork3(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("1399775825"));
+		Node toNode = network.getNodes().get(Id.createNodeId("105728207"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway3");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway3ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速4
+	private void addHighwayToTheNetwork4(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("105728207"));
+		Node toNode = network.getNodes().get(Id.createNodeId("9019173953"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway4");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway4ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速5
+	private void addHighwayToTheNetwork5(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("9019173953"));
+		Node toNode = network.getNodes().get(Id.createNodeId("pt_regio_348113"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway5");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway5ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速6
+	private void addHighwayToTheNetwork6(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("pt_regio_348113"));
+		Node toNode = network.getNodes().get(Id.createNodeId("434482779"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway6");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway6ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速7
+	private void addHighwayToTheNetwork7(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("434482779"));
+		Node toNode = network.getNodes().get(Id.createNodeId("9026955992"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway7");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway7ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速8
+	private void addHighwayToTheNetwork8(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("9026955992"));
+		Node toNode = network.getNodes().get(Id.createNodeId("297274414"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway8");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway8ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+	//加高速9
+	private void addHighwayToTheNetwork9(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("297274414"));
+		Node toNode = network.getNodes().get(Id.createNodeId("9057780469"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway9");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway9ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速10
+	private void addHighwayToTheNetwork10(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("9057780469"));
+		Node toNode = network.getNodes().get(Id.createNodeId("298138516"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway10");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway10ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+
+	//加高速11
+	private void addHighwayToTheNetwork11(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("298138516"));
+		Node toNode = network.getNodes().get(Id.createNodeId("105739519"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway11");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway11ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
+	//加高速12
+	private void addHighwayToTheNetwork12(Network network) {
+		Node fromNode = network.getNodes().get(Id.createNodeId("298138516"));
+		Node toNode = network.getNodes().get(Id.createNodeId("297315202"));
+
+		Id<Link> linkIdMyNewHighway = Id.createLinkId("myNewHighway12");
+		double lengthOfMyNewHighway = NetworkUtils.getEuclideanDistance(fromNode.getCoord(), toNode.getCoord());
+		double freeSpeedOfMyNewHighway = 120.0 / 3.6;
+		double capacity = 6000;
+		double numberOfLanesOfMyNewHighway = 6.0;
+
+		Link myNewLink = NetworkUtils.createLink(
+			linkIdMyNewHighway,
+			fromNode,
+			toNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLink.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLink);
+
+		Link myNewLinkReverse = NetworkUtils.createLink(
+			Id.createLinkId("myNewHighway12ReverseDirection"),
+			toNode,
+			fromNode,
+			network,
+			lengthOfMyNewHighway,
+			freeSpeedOfMyNewHighway,
+			capacity,
+			numberOfLanesOfMyNewHighway
+		);
+		myNewLinkReverse.setAllowedModes(Set.of("car","freight","drt","av"));
+		network.addLink(myNewLinkReverse);
+	}
 }

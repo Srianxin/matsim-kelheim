@@ -6,10 +6,10 @@
     </module>
 
     <module name="controller">
-        <param name="lastIteration" value="49"/>
+        <param name="lastIteration" value="50"/>
         <param name="overwriteFiles" value="failIfDirectoryExists"/>
-        <param name="runId" value="original"/>
-        <param name="outputDirectory" value="./output/original"/>
+        <param name="runId" value="Highway"/>
+        <param name="outputDirectory" value="./output/Highway"/>
         <param name="writeEventsInterval" value="100"/>
         <param name="writePlansInterval" value="100"/>
         <param name="enableLinkToLinkRouting" value="false"/>
@@ -88,16 +88,17 @@
 		</parameterset>
 	</module>
     <module name="replanning">
+		<!-- change the weight , Reroute-->
         <param name="fractionOfIterationsToDisableInnovation" value="0.9"/>
         <parameterset type="strategysettings">
             <param name="strategyName" value="ChangeExpBeta"/>
             <param name="subpopulation" value="person"/>
-            <param name="weight" value="0.85"/>
+            <param name="weight" value="0.55"/>
         </parameterset>
         <parameterset type="strategysettings">
             <param name="strategyName" value="ReRoute"/>
             <param name="subpopulation" value="person"/>
-            <param name="weight" value="0.10"/>
+            <param name="weight" value="0.30"/>
         </parameterset>
         <parameterset type="strategysettings">
             <param name="strategyName" value="SubtourModeChoice"/>
@@ -107,18 +108,18 @@
         <parameterset type="strategysettings">
             <param name="strategyName" value="TimeAllocationMutator"/>
             <param name="subpopulation" value="person"/>
-            <param name="weight" value="0.10"/>
+            <param name="weight" value="0.05"/>
         </parameterset>
 
         <parameterset type="strategysettings">
             <param name="strategyName" value="ChangeExpBeta"/>
             <param name="subpopulation" value="freight"/>
-            <param name="weight" value="0.95"/>
+            <param name="weight" value="0.60"/>
         </parameterset>
         <parameterset type="strategysettings">
             <param name="strategyName" value="ReRoute"/>
             <param name="subpopulation" value="freight"/>
-            <param name="weight" value="0.05"/>
+            <param name="weight" value="0.40"/>
         </parameterset>
     </module>
 
