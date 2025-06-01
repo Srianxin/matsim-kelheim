@@ -157,12 +157,12 @@ public class Run1pctKelheimScenario {
 
 		Link fwd = NetworkUtils.createLink(Id.createLinkId(idFwd), from, to,
 			net, len, F_SPEED, CAPACITY, LANES);
-		fwd.setAllowedModes(Set.of("car","freight","drt","av"));
+		fwd.setAllowedModes(Set.of("car","freight","drt","av")); //actually only added car and freight
 		net.addLink(fwd);
 
 		Link rev = NetworkUtils.createLink(Id.createLinkId(idRev), to, from,
 			net, len, F_SPEED, CAPACITY, LANES);
-		rev.setAllowedModes(Set.of("car","freight","drt","av"));
+		rev.setAllowedModes(Set.of("car","freight","drt","av")); //same as the previous one
 		net.addLink(rev);
 	}
 
@@ -212,6 +212,6 @@ public class Run1pctKelheimScenario {
 	}
 	private static void addHighway12(Network net){
 		createTwoWayLink(net,"myNewHighway12","myNewHighway12Rev",
-			"298138516","297315202");
+			"298138516","297315202"); //a littel mistakes here (nForm)
 	}
 }
