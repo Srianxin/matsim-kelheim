@@ -5,8 +5,11 @@ import com.google.common.collect.Sets;
 import org.matsim.analysis.KelheimMainModeIdentifier;
 import org.matsim.analysis.ModeChoiceCoverageControlerListener;
 import org.matsim.analysis.personMoney.PersonMoneyEventsAnalysisModule;
+import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
 import org.matsim.api.core.v01.network.Link;
+import org.matsim.api.core.v01.network.Network;
+import org.matsim.api.core.v01.network.Node;
 import org.matsim.contrib.vsp.pt.fare.DistanceBasedPtFareParams;
 import org.matsim.contrib.vsp.pt.fare.PtFareConfigGroup;
 import org.matsim.contrib.vsp.pt.fare.PtFareModule;
@@ -19,6 +22,7 @@ import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controller;
 import org.matsim.core.controler.ControllerUtils;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
+import org.matsim.core.network.NetworkUtils;
 import org.matsim.core.replanning.annealing.ReplanningAnnealerConfigGroup;
 import org.matsim.core.router.AnalysisMainModeIdentifier;
 import org.matsim.core.scenario.ScenarioUtils;
@@ -31,6 +35,12 @@ import java.util.Set;
 
 public class Run1pctKelheimScenario {
 	private static final double SAMPLE = 0.01;
+
+	//for the new highways
+	private static final double F_SPEED = 120.0 / 3.6;      // 120 km/h → m/s
+	private static final double CAPACITY = 6000;            // veh/h
+	private static final double LANES = 6.0;
+
 
 	public static void main(String[] args) {
 		// ======= Load & adapt config =======
@@ -89,6 +99,21 @@ public class Run1pctKelheimScenario {
 		// ======= Load & adapt scenario =======
 		Scenario scenario = ScenarioUtils.loadScenario(config);
 
+		//add highways
+		addHighway1(scenario.getNetwork());
+		addHighway2(scenario.getNetwork());
+		addHighway3(scenario.getNetwork());
+		addHighway4(scenario.getNetwork());
+		addHighway5(scenario.getNetwork());
+		addHighway6(scenario.getNetwork());
+		addHighway7(scenario.getNetwork());
+		addHighway8(scenario.getNetwork());
+		addHighway9(scenario.getNetwork());
+		addHighway10(scenario.getNetwork());
+		addHighway11(scenario.getNetwork());
+		addHighway12(scenario.getNetwork());
+
+
 		for (Link link : scenario.getNetwork().getLinks().values()) {
 			Set<String> modes = link.getAllowedModes();
 
@@ -120,5 +145,73 @@ public class Run1pctKelheimScenario {
 			}
 		});
 		controller.run();
+	}
+
+	//add highways one by one
+	private static void createTwoWayLink(Network net, String idFwd, String idRev,
+										 String nFrom, String nTo) {
+
+		Node from = net.getNodes().get(Id.createNodeId(nFrom));
+		Node to   = net.getNodes().get(Id.createNodeId(nTo));
+		double len = NetworkUtils.getEuclideanDistance(from.getCoord(), to.getCoord());
+
+		Link fwd = NetworkUtils.createLink(Id.createLinkId(idFwd), from, to,
+			net, len, F_SPEED, CAPACITY, LANES);
+		fwd.setAllowedModes(Set.of("car","freight","drt","av"));
+		net.addLink(fwd);
+
+		Link rev = NetworkUtils.createLink(Id.createLinkId(idRev), to, from,
+			net, len, F_SPEED, CAPACITY, LANES);
+		rev.setAllowedModes(Set.of("car","freight","drt","av"));
+		net.addLink(rev);
+	}
+
+	private static void addHighway1(Network net){
+		createTwoWayLink(net,"myNewHighway1","myNewHighway1Rev",
+			"297315202","273092049");
+	}
+	private static void addHighway2(Network net){
+		createTwoWayLink(net,"myNewHighway2","myNewHighway2Rev",
+			"273092049","1399775825");
+	}
+	private static void addHighway3(Network net){
+		createTwoWayLink(net,"myNewHighway3","myNewHighway3Rev",
+			"1399775825","105728207");
+	}
+	private static void addHighway4(Network net){
+		createTwoWayLink(net,"myNewHighway4","myNewHighway4Rev",
+			"105728207","3447440176");
+	}
+	private static void addHighway5(Network net){
+		createTwoWayLink(net,"myNewHighway5","myNewHighway5Rev",
+			"3447440176","pt_regio_348113");
+	}
+	private static void addHighway6(Network net){
+		createTwoWayLink(net,"myNewHighway6","myNewHighway6Rev",
+			"pt_regio_348113","434482779");
+	}
+	private static void addHighway7(Network net){
+		createTwoWayLink(net,"myNewHighway7","myNewHighway7Rev",
+			"434482779","9026955992");
+	}
+	private static void addHighway8(Network net){
+		createTwoWayLink(net,"myNewHighway8","myNewHighway8Rev",
+			"9026955992","297274414");
+	}
+	private static void addHighway9(Network net){
+		createTwoWayLink(net,"myNewHighway9","myNewHighway9Rev",
+			"297274414","9057780469");
+	}
+	private static void addHighway10(Network net){
+		createTwoWayLink(net,"myNewHighway10","myNewHighway10Rev",
+			"9057780469","298138516");
+	}
+	private static void addHighway11(Network net){
+		createTwoWayLink(net,"myNewHighway11","myNewHighway11Rev",
+			"298138516","105739519");
+	}
+	private static void addHighway12(Network net){
+		createTwoWayLink(net,"myNewHighway12","myNewHighway12Rev",
+			"298138516","297315202");
 	}
 }
